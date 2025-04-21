@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Viaggio della Gocciolina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Il Viaggio della Gocciolina</h1>
+
+    <!-- Start screen - will be shown initially -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h2>Viaggio dell'acqua</h2>
+            <p>Scopri il meraviglioso viaggio dell'acqua con la nostra gocciolina!</p>
+            <button id="start-button">Inizia l'avventura! 🚀</button>
+        </div>
+    </div>
+
+    <!-- Game container - will be hidden initially -->
+    <div id="game-area" class="hidden">
+        <div id="game-container">
+            <div id="sky">
+                <div id="sun" class="interactive" title="Clicca sul sole per farlo diventare più caldo!">☀️</div>
+                <div id="cloud" class="hidden interactive" title="Clicca sulla nuvola per farla muovere!">☁️</div>
+                <div id="rain" class="hidden">💧<br>💧<br>💧</div>
+            </div>
+            <div id="sea">
+                <div id="water">~~~~~~~</div>
+                <div id="evaporation" class="hidden">↑ ↑ ↑</div>
+            </div>
+        </div>
+
+        <div id="narration-box">
+            <p id="narration-text">Ciao! Sono una piccola gocciolina d'acqua e vivo nel grande mare. Vuoi scoprire il mio viaggio?</p>
+            <button id="speak-button" aria-label="Leggi ad alta voce">🔊</button>
+        </div>
+
+        <div id="question-box" class="hidden">
+            <p id="question-text"></p>
+            <div id="answer-buttons">
+                <!-- I bottoni verranno aggiunti qui da JavaScript -->
+            </div>
+            <p id="feedback-text"></p>
+        </div>
+
+        <button id="next-button">Iniziamo!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

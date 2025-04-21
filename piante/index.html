@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalla Semina all'Albero</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dalla Semina all'Albero</h1>
+
+    <!-- Start screen - will be shown initially -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h2>La Vita di un Albero</h2>
+            <p>Scopri come un piccolo seme diventa un grande albero!</p>
+            <button id="start-button">Inizia l'avventura! 🌱</button>
+        </div>
+    </div>
+
+    <!-- Game container - will be hidden initially -->
+    <div id="game-area" class="hidden">
+        <div id="game-container">
+            <div id="sky">
+                <div id="sun" class="interactive" title="Clicca sul sole per riscaldare il terreno!">☀️</div>
+                <div id="rain-drop" class="hidden interactive" title="Clicca sulla pioggia per innaffiare il seme!">💧</div>
+            </div>
+            <div id="ground">
+                <div id="seed" class="hidden interactive" title="Clicca sul seme per piantarlo più in profondità!">🌰</div>
+                <div id="sprout" class="hidden interactive" title="Clicca sul germoglio per farlo crescere!">🌱</div>
+                <div id="small-tree" class="hidden interactive" title="Clicca sul piccolo albero per farlo crescere!">🌿</div>
+                <div id="medium-tree" class="hidden">🌳</div>
+                <div id="big-tree" class="hidden">🌲</div>
+                <div id="roots" class="hidden">➰➰➰</div>
+                <div id="ground-surface">〰️〰️〰️〰️〰️</div>
+            </div>
+        </div>
+
+        <div id="narration-box">
+            <p id="narration-text">Ciao! Oggi scopriremo come un piccolo seme diventa un grande albero!</p>
+            <button id="speak-button" aria-label="Leggi ad alta voce">🔊</button>
+        </div>
+
+        <div id="question-box" class="hidden">
+            <p id="question-text"></p>
+            <div id="answer-buttons">
+                <!-- I bottoni verranno aggiunti qui da JavaScript -->
+            </div>
+            <p id="feedback-text"></p>
+        </div>
+
+        <button id="next-button">Iniziamo!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il Temporale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Il Temporale</h1>
+
+    <!-- Start screen - will be shown initially -->
+    <div id="start-screen">
+        <div class="start-content">
+            <h2>La Formazione del Temporale</h2>
+            <p>Scopri come si forma un temporale insieme alla gocciolina!</p>
+            <button id="start-button">Inizia l'avventura! 🚀</button>
+        </div>
+    </div>
+
+    <!-- Game container - will be hidden initially -->
+    <div id="game-area" class="hidden">
+        <div id="game-container">
+            <div id="sky">
+                <div id="sun" class="interactive" title="Clicca sul sole per riscaldare l'aria!">☀️</div>
+                <div id="cloud-small" class="cloud hidden interactive" title="Clicca sulla nuvola per farla crescere!">☁️</div>
+                <div id="cloud-big" class="cloud hidden">⛅</div>
+                <div id="thunder-cloud" class="cloud hidden">🌩️</div>
+                <div id="lightning" class="hidden">⚡</div>
+                <div id="rain" class="hidden">💧<br>💧<br>💧</div>
+            </div>
+            <div id="ground">
+                <div id="warm-air" class="hidden">🔥↑🔥↑🔥</div>
+                <div id="ground-surface">〰️〰️〰️〰️〰️</div>
+            </div>
+        </div>
+
+        <div id="narration-box">
+            <p id="narration-text">Ciao! Sono la gocciolina e oggi ti spiegherò come si forma un temporale!</p>
+            <button id="speak-button" aria-label="Leggi ad alta voce">🔊</button>
+        </div>
+
+        <div id="question-box" class="hidden">
+            <p id="question-text"></p>
+            <div id="answer-buttons">
+                <!-- I bottoni verranno aggiunti qui da JavaScript -->
+            </div>
+            <p id="feedback-text"></p>
+        </div>
+
+        <button id="next-button">Iniziamo!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
