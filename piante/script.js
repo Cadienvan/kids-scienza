@@ -115,7 +115,7 @@ function speakText(text) {
 // Definiamo i passi del gioco (narrazione, animazione, domanda)
 const gameSteps = [
     { // Step 0: Introduzione
-        narration: "Ciao! Oggi scopriremo come un piccolo seme diventa un grande albero! Premi 'Avanti' per iniziare l'avventura!",
+        narration: "Ciao! Oggi guarderemo come un piccolo semino diventa un albero grande! Premi 'Avanti' per iniziare!",
         animation: () => {
             // Reset degli elementi
             seedElement.classList.add('hidden');
@@ -135,7 +135,7 @@ const gameSteps = [
         question: null // Nessuna domanda all'inizio
     },
     { // Step 1: Il Seme
-        narration: "Ecco il nostro protagonista: un piccolo seme! Prima di piantarlo, ha bisogno che il terreno sia caldo. Clicca sul sole per riscaldare il terreno!",
+        narration: "Ecco un piccolo semino! Prima deve sentire il calore. Clicca sul sole per scaldare la terra!",
         animation: () => {
             // Mostra il seme e rimuovi eventuali classi
             seedElement.classList.remove('hidden', 'seed-planted');
@@ -146,38 +146,38 @@ const gameSteps = [
             nextButton.classList.add('hidden'); // Nascondiamo il bottone finché il sole non è caldo
         },
         question: {
-            text: "Cosa serve al seme per iniziare a crescere?",
+            text: "Di cosa ha bisogno il semino?",
             answers: [
-                { text: "Solo luce solare", correct: false },
+                { text: "Solo luce", correct: false },
                 { text: "Calore e acqua", correct: true },
                 { text: "Solo aria", correct: false }
             ],
-            correctFeedback: "Esatto! Un seme ha bisogno sia di calore che di acqua per germogliare.",
-            incorrectFeedback: "Non proprio. Il seme ha bisogno sia di calore che di acqua per poter germogliare."
+            correctFeedback: "Giusto! Il semino ha bisogno di calore e acqua per crescere.",
+            incorrectFeedback: "Non proprio. Il semino ha bisogno di calore e acqua per crescere."
         },
         requiresInteraction: 'sun'
     },
     { // Step 2: Piantare il Seme
-        narration: "Ora che il terreno è caldo, possiamo piantare il nostro seme. Clicca sul seme per metterlo nel terreno!",
+        narration: "Ora che la terra è calda, possiamo mettere il semino nella terra. Clicca sul semino!",
         animation: () => {
             // Terreno già caldo dallo step precedente
             narrationText.textContent = gameSteps[currentStep].narration;
             nextButton.classList.add('hidden'); // Nascondiamo il bottone finché il seme non è piantato
         },
         question: {
-            text: "Perché piantiamo i semi nel terreno?",
+            text: "Perché mettiamo i semi nella terra?",
             answers: [
-                { text: "Per nasconderli dagli uccelli", correct: false },
-                { text: "Per decorare il giardino", correct: false },
-                { text: "Per proteggerli e dare loro nutrimento", correct: true }
+                { text: "Per nasconderli", correct: false },
+                { text: "Per farli crescere meglio", correct: true },
+                { text: "Per decorare", correct: false }
             ],
-            correctFeedback: "Esatto! Il terreno protegge il seme e gli fornisce i nutrienti necessari per crescere.",
-            incorrectFeedback: "Non proprio. Il terreno protegge il seme e gli fornisce i nutrienti necessari per crescere."
+            correctFeedback: "Bravo! La terra aiuta il semino a crescere meglio.",
+            incorrectFeedback: "Non proprio. La terra aiuta il semino a crescere meglio."
         },
         requiresInteraction: 'seed'
     },
     { // Step 3: Acqua per il Seme
-        narration: "Il nostro seme è piantato! Ma ha bisogno di acqua per germogliare. Guarda, sta iniziando a piovere! Clicca sulla goccia di pioggia per innaffiare il seme.",
+        narration: "Il nostro semino è nella terra! Ma ha bisogno di acqua. Guarda, sta piovendo! Clicca sulla goccia di pioggia!",
         animation: () => {
             // Mostriamo la pioggia
             rainDropElement.classList.remove('hidden');
@@ -186,19 +186,19 @@ const gameSteps = [
             nextButton.classList.add('hidden');
         },
         question: {
-            text: "Perché l'acqua è importante per la crescita delle piante?",
+            text: "Perché le piante hanno bisogno di acqua?",
             answers: [
-                { text: "Per farle brillare al sole", correct: false },
-                { text: "Per trasportare nutrienti e permettere la crescita", correct: true },
-                { text: "Solo per renderle più belle", correct: false }
+                { text: "Per farle brillare", correct: false },
+                { text: "Per aiutarle a crescere", correct: true },
+                { text: "Per farle diventare blu", correct: false }
             ],
-            correctFeedback: "Esatto! L'acqua scioglie i nutrienti nel terreno e li trasporta all'interno della pianta.",
-            incorrectFeedback: "Non proprio. L'acqua è fondamentale perché scioglie i nutrienti nel terreno e li trasporta all'interno della pianta."
+            correctFeedback: "Esatto! L'acqua aiuta le piante a crescere, proprio come fa con te quando bevi.",
+            incorrectFeedback: "Non proprio. L'acqua aiuta le piante a crescere, proprio come fa con te quando bevi."
         },
         requiresInteraction: 'rain-drop'
     },
-    { // Step 4: Germogliazione
-        narration: "Il seme ha ricevuto calore e acqua, ed ecco che inizia a germogliare! Dal seme spunta un piccolo germoglio verde. Clicca sul germoglio per aiutarlo a crescere!",
+    { // Step 4: Germogliazione semplificata
+        narration: "Il semino ha sentito il sole e bevuto l'acqua! Guarda, sta spuntando una piccola piantina verde! Clicca sulla piantina per aiutarla a crescere!",
         animation: () => {
             // Nascondiamo il seme e mostriamo il germoglio
             seedElement.classList.add('hidden');
@@ -209,39 +209,39 @@ const gameSteps = [
             nextButton.classList.add('hidden');
         },
         question: {
-            text: "Come si chiama il processo in cui il seme inizia a svilupparsi?",
+            text: "Da dove viene la piccola piantina?",
             answers: [
-                { text: "Fioritura", correct: false },
-                { text: "Germogliazione", correct: true },
-                { text: "Fotosintesi", correct: false }
+                { text: "È caduta dal cielo", correct: false },
+                { text: "È nata dal semino", correct: true },
+                { text: "L'ha portata un uccellino", correct: false }
             ],
-            correctFeedback: "Corretto! La germogliazione è il processo in cui il seme si sviluppa in una nuova pianta.",
-            incorrectFeedback: "Non è corretto. Il processo in cui il seme inizia a svilupparsi in una nuova pianta si chiama germogliazione."
+            correctFeedback: "Esatto! La piantina è nata dal semino che abbiamo messo nella terra.",
+            incorrectFeedback: "Non proprio. La piantina è nata dal semino che abbiamo messo nella terra."
         },
         requiresInteraction: 'sprout'
     },
-    { // Step 5: Sviluppo delle Radici
-        narration: "Mentre il germoglio cresce verso l'alto cercando la luce del sole, sotto terra si sviluppano le radici che ancorano la pianta e assorbono acqua e nutrienti.",
+    { // Step 5: Radici semplificate
+        narration: "Mentre la piantina cresce verso l'alto, sotto terra crescono le radici. Le radici sono come le gambe della pianta e la aiutano a bere l'acqua.",
         animation: () => {
             // Mostriamo le radici
             rootsElement.classList.remove('hidden');
             
             narrationText.textContent = gameSteps[currentStep].narration;
-            nextButton.textContent = "Cosa succede dopo?";
+            nextButton.textContent = "E dopo?";
         },
         question: {
-            text: "A cosa servono le radici di una pianta?",
+            text: "A cosa servono le radici?",
             answers: [
-                { text: "Solo a tenere la pianta ferma nel terreno", correct: false },
-                { text: "A raccogliere la luce del sole", correct: false },
-                { text: "Ad assorbire acqua e nutrienti e ancorare la pianta", correct: true }
+                { text: "A far volare la pianta", correct: false },
+                { text: "A far bere la pianta", correct: true },
+                { text: "A far cantare la pianta", correct: false }
             ],
-            correctFeedback: "Perfetto! Le radici hanno il doppio compito di assorbire acqua e nutrienti dal terreno e di ancorare saldamente la pianta.",
-            incorrectFeedback: "Non proprio. Le radici hanno un ruolo fondamentale: assorbono acqua e nutrienti dal terreno e ancorano saldamente la pianta."
+            correctFeedback: "Bravo! Le radici aiutano la pianta a bere l'acqua dalla terra.",
+            incorrectFeedback: "Non proprio. Le radici aiutano la pianta a bere l'acqua dalla terra."
         }
     },
-    { // Step 6: Piccolo Albero
-        narration: "Con il tempo, il germoglio diventa sempre più grande. Spuntano nuove foglie che, grazie alla luce del sole, producono il nutrimento per la pianta attraverso la fotosintesi. Clicca sul germoglio per farlo crescere ancora!",
+    { // Step 6: Piccolo Albero semplificato
+        narration: "La piantina è cresciuta ancora! Le foglioline verdi prendono la luce del sole e aiutano la pianta a diventare più grande. Clicca sulla piantina per farla crescere!",
         animation: () => {
             // Nascondiamo il germoglio e mostriamo il piccolo albero
             sproutElement.classList.add('hidden');
@@ -251,19 +251,19 @@ const gameSteps = [
             nextButton.classList.add('hidden');
         },
         question: {
-            text: "Come si chiama il processo con cui le piante producono il proprio nutrimento usando la luce solare?",
+            text: "Di cosa hanno bisogno le foglie verdi?",
             answers: [
-                { text: "Traspirazione", correct: false },
-                { text: "Fotosintesi", correct: true },
-                { text: "Germinazione", correct: false }
+                { text: "Del buio", correct: false },
+                { text: "Del sole", correct: true },
+                { text: "Del vento", correct: false }
             ],
-            correctFeedback: "Esatto! La fotosintesi è il processo con cui le piante utilizzano la luce del sole per trasformare acqua e anidride carbonica in zuccheri (nutrimento) e ossigeno.",
-            incorrectFeedback: "Non è corretto. Il processo è la fotosintesi, con cui le piante usano la luce solare per produrre nutrimento e rilasciare ossigeno."
+            correctFeedback: "Giusto! Le foglie hanno bisogno del sole, proprio come noi abbiamo bisogno del cibo.",
+            incorrectFeedback: "Non proprio. Le foglie hanno bisogno del sole, proprio come noi abbiamo bisogno del cibo."
         },
         requiresInteraction: 'small-tree'
     },
     { // Step 7: Albero in crescita
-        narration: "La nostra pianta continua a crescere e diventa un albero giovane! Il tronco diventa più forte e compaiono nuovi rami con tante foglie.",
+        narration: "La nostra piantina è diventata un alberello! Il tronco diventa più forte e spuntano nuovi rami con tante foglie.",
         animation: () => {
             // Nascondiamo il piccolo albero e mostriamo l'albero medio
             smallTreeElement.classList.add('hidden');
@@ -273,39 +273,39 @@ const gameSteps = [
             nextButton.textContent = "E poi?";
         },
         question: {
-            text: "Quale parte dell'albero sostiene rami e foglie?",
+            text: "Quale parte dell'albero tiene su i rami?",
             answers: [
-                { text: "Le radici", correct: false },
+                { text: "Le foglie", correct: false },
                 { text: "Il tronco", correct: true },
                 { text: "I fiori", correct: false }
             ],
-            correctFeedback: "Corretto! Il tronco è la struttura portante dell'albero che sostiene i rami e le foglie.",
-            incorrectFeedback: "Non è così. Il tronco è la parte dell'albero che sostiene i rami e le foglie."
+            correctFeedback: "Giusto! Il tronco è la parte forte che tiene su tutti i rami e le foglie.",
+            incorrectFeedback: "Non proprio. Il tronco è la parte forte che tiene su tutti i rami e le foglie."
         }
     },
     { // Step 8: Albero adulto
-        narration: "Passano gli anni e il nostro albero diventa grande e forte! Adesso può ospitare uccelli, produrre frutti e semi, e contribuire a rendere l'aria pulita producendo ossigeno.",
+        narration: "Passano tanti giorni e l'albero diventa grande e forte! Ora può dare casa agli uccellini, fare frutti buoni e pulire l'aria che respiriamo.",
         animation: () => {
             // Nascondiamo l'albero medio e mostriamo l'albero grande
             mediumTreeElement.classList.add('hidden');
             bigTreeElement.classList.remove('hidden');
             
             narrationText.textContent = gameSteps[currentStep].narration;
-            nextButton.textContent = "Perché gli alberi sono importanti?";
+            nextButton.textContent = "Perché sono importanti gli alberi?";
         },
         question: {
-            text: "Quale di questi è un beneficio che gli alberi offrono all'ambiente?",
+            text: "Perché gli alberi sono nostri amici?",
             answers: [
-                { text: "Consumano ossigeno", correct: false },
-                { text: "Producono ossigeno e puliscono l'aria", correct: true },
-                { text: "Riscaldano l'atmosfera", correct: false }
+                { text: "Perché sono alti", correct: false },
+                { text: "Perché ci danno aria pulita", correct: true },
+                { text: "Perché sono tutti verdi", correct: false }
             ],
-            correctFeedback: "Esatto! Gli alberi producono l'ossigeno che respiriamo e aiutano a pulire l'aria dai gas inquinanti.",
-            incorrectFeedback: "Non è corretto. Gli alberi sono fondamentali perché producono ossigeno e aiutano a pulire l'aria."
+            correctFeedback: "Esatto! Gli alberi puliscono l'aria che respiriamo e ci aiutano a stare bene.",
+            incorrectFeedback: "Non proprio. Gli alberi puliscono l'aria che respiriamo e ci aiutano a stare bene."
         }
     },
-    { // Step 9: Il Ciclo della Vita
-        narration: "L'albero adulto produce frutti che contengono nuovi semi. Quando questi semi cadono a terra, il ciclo ricomincia e possono nascere nuovi alberi!",
+    { // Step 9: Il Ciclo della Vita semplificato
+        narration: "L'albero grande fa i frutti con dentro nuovi semini. Quando i semini cadono a terra, possono nascere nuovi alberi!",
         animation: () => {
             // Mostriamo di nuovo un seme accanto all'albero
             seedElement.classList.remove('hidden');
@@ -317,14 +317,14 @@ const gameSteps = [
             currentStep = -1; // Per ricominciare dal passo 0
         },
         question: {
-            text: "Come si chiama il ciclo continuo della vita delle piante?",
+            text: "Cosa c'è dentro i frutti degli alberi?",
             answers: [
-                { text: "Ciclo dell'acqua", correct: false },
-                { text: "Ciclo vitale", correct: true },
-                { text: "Ciclo delle stagioni", correct: false }
+                { text: "Solo acqua", correct: false },
+                { text: "Nuovi semini", correct: true },
+                { text: "Piccole foglie", correct: false }
             ],
-            correctFeedback: "Perfetto! Il ciclo vitale delle piante descrive le fasi di vita dalla nascita alla riproduzione, creando nuove generazioni.",
-            incorrectFeedback: "Non proprio. Si chiama ciclo vitale, il processo continuo che permette alle piante di riprodursi e creare nuove generazioni."
+            correctFeedback: "Bravo! Dentro i frutti ci sono semini che possono far nascere nuovi alberi.",
+            incorrectFeedback: "Non proprio. Dentro i frutti ci sono semini che possono far nascere nuovi alberi."
         }
     }
 ];
